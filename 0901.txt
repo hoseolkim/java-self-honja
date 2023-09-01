@@ -1,0 +1,68 @@
+요청 분석...(request객체..)
+request line
+	- 수신자에 대한 정보
+	- URL
+	- form이 가지고있는 action주소
+	- 요청의 목적을 여기다가 담는다
+	- 요청을 보내는 의도...
+request header
+	- optional data
+	- 보내는 사람에 대한 정보
+	
+	- 메타데이터..?
+request body
+	- formData
+	- 엽서..? 의 형태에는 body가 필요가 없다
+	- 서버에 뭔가 보내는게 아니라
+	  서버에 뭘 요청해서 가져와야할 경우
+	  바디가 필요가 없다
+
+ex) get메소드..의 경우 request body없이 구성
+	post방식의 경우 
+	
+특별한 설정을 하지 않는한 클라이언트가 서버에 요청하는
+메소드의 방식은 GET이 Default이다
+여기서 특별한 설정이란.. Form태그의 method속성을 의미한다
+
+네이버의 예시..
+www.naver.com
+: 네이버가 가진 appbase의 root context의
+welcomepage를 가져온다...
+
+request를 분석한다는 것은
+request의 line을 먼저 뜯어보고
+request의 header를 뜯어서
+client를 분석해야한다
+
+
+response도 응답을 할 때
+response의 구성을
+line, header, body로 잘 구성해서 내보내야 한다..
+
+
+request의 get방식은 바디가 구성되지 않는데..
+쿼리스트링은? 
+서버에 보내는 데이터를 line에다가 쓰는 것을 말한다
+궁여지책으로 편지봉투에 메시지를 적어서 보낸다
+
+바디가 있어도 필요하다면 line에 쿼리스트링을 구성해서
+보낼 수 있다.
+
+&를 구분점으로 name=value를 하나의 섹터라고 부른다
+
+사전 요청
+doHead -> ex) 은행에 세션연장요청같은거
+
+컬렉션 뷰
+request Header
+accept : response의 조건
+- response의 content-type과 한쌍
+서버에서 분석해야하는 조건
+accept
+content -> 이게 있기만해도 request의 body가 있다는 뜻이다
+
+get방식에서 쿼리스트링
+에서의 한글은 톰캣이 LINE을 읽어들여 처리할때
+한글을 UTF-8로 처리해준다.
+
+단위 객체를 대상으로한 테스트..
