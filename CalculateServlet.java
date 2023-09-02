@@ -126,10 +126,15 @@ public class CalculateServlet extends HttpServlet{
 			}else{
 				result = String.format("%d %s %d = %d", num1, oper, num2, (int)res);
 			}
-			
+			// 페이지자체를 없애버리고 출력문만 남기는 처리방식
+			/*
 			try(PrintWriter out = resp.getWriter(); ){
 				out.println(result);
 			}
+			*/
+			// 페이지는 같은페이지를 출력해주고 setAttribute로 넘기는 방식
+			req.setAttribute("result", result);
+			req.getRequestDispatcher("/WEB-INF/views/06/calculateForm.jsp").forward(req, resp);
 			return;
 		}else if("POST".equals(method)){
 			String type = req.getParameter("parsetype").toLowerCase();
