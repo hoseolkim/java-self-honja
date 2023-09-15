@@ -1,0 +1,57 @@
+클라이언트가 보내는 content-type 디게디게 중요하다
+파라미터일 경우 : content-type=form-urlencoded 데이터
+
+이야 빡세다..죽을거같아요
+
+피자먹고싶당
+
+connect less
+의도적인 연결 x
+따라서 의도적으로 끊을수도 없다
+request가 생길때마다 connect되고
+response되고 끊김
+연결이 먼저 수립되고
+request가 넘어가고
+response가 들어오고
+연결이 끊어진다
+
+response가 serverside에서 나갈때
+state less가 됨
+
+connect full
+
+include방식 이동
+
+client -> server A -> server B -> server A
+-> client
+
+include방식은 원본 요청이 사라지지않는다는점에서
+ forward와 비슷하다
+
+dispatch를 하냐안하냐
+요청 분기방식
+요청 비분기방식(redirect)
+
+redirect를 직접 해보고
+4가지의 scope 를 다뤄보자
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

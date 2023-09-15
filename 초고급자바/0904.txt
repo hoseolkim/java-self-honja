@@ -1,0 +1,38 @@
+cp resource
+개발용 > IDE용 > 실제 서버의 자원
+cp 이후의 경로는 고정, 그 이전의 경로는 변동가능성이있다.
+web resource
+
+1. 클래스를 힙 메모리에 적재
+2. 클래스의 인스턴스를 상수메모리에 생성하여 적재
+3. 생성된 클래스의 주소를 변수에 할당
+
+
+Class Loader
+
+
+
+RESTful URI
+Representational State Transfer
+State > 데이터
+
+REST - 순수하게 DATA(JSON)만 받겠다.
+
+1. 명사와 동사는 구분한다.
+
+URI는 명사만 표현한다.
+동사는 METHOD로 표현한다
+명사로 요청하면 명사로 받는다
+json or xml
+
+
+
+
+
+
+
+
+
+
+
+

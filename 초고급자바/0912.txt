@@ -1,0 +1,48 @@
+connect full의 경우
+port를 잡고있기때문에
+web이 connect full의 연결을 유지하면
+요청을 감당할 수 있는 수가 적어진다.
+
+page module화 구조
+
+redirect
+1. request에 대한 정보를 삭제하고싶을 때
+첫 요청의 request를 한번에 처리하고
+request에 대한 정보를 삭제하고싶을때 사용.
+응답에 대한 정보또한 남기고 싶지 않을때 사용한다.
+2. 보안처리할 때
+ 보안이 필요한 정보를 처리할 때는
+ 성공 실패의 여부에 상관없이 redirect처리한다
+
+sessionStorage에 대해 고민..
+로그인 정보 true/false, 로그인정보 따로 map으로 가지고있어야할까
+
+Dispatch방식 :
+요청을 위임하는 구조
+
+document객체는 한페이지에 하나만
+
+custom tag를 사용했을 때 prefix
+include의 위치를 임의적으로 설정할 수 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

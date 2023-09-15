@@ -1,0 +1,69 @@
+2. 웹과 인터넷 개요
+
+1) C/S 시스템과 N-Tier architecture
+
+인터넷 공간에 C/S 시스템을 구축했을때 해당 공간을 논리적으로 표현하면 웹이라 지칭.
+웹 : 서로 다른 역할과 목적을 가진 대화의 상대방(end-point, 종단, peer)이 공간(지리)적 제약 없이 대화를 통해 정보를 공유하는 공간.
+때문에 웹에서는 대화의 상대방(peer)를 식별하고, 식별된 상대와의 송수신 체계가 필요함.
+
+* 웹(C/S)의 구성요소
+a) Client : 질문(명령, 요청)의 주체 
+	: 서버를 식별하고, 요청을 전송
+	
+b) Server : 응답(처리결과) 의 주체
+	: 수신 대기, 수신 후 응답을 전송
+	
+* 필요요건
+a) peer 식별 : IP, Port, DomainName   
+	IP v4 (32bit)  : ex) 192.168.35.23
+	IP v6 (128bit) : ex) 2001:0230:abcd:ffff:0000:0000:ffff:1111
+   peer 내의 자원 식별 : URL (protocol://domain_name[IP]:port/resource_identify...) 
+	ex) https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=4&acq=spring&qdt=0&ie=utf8&query=spring
+   Domain Name 형태, 하위 레벨 도메인은 상위 레벨 도메인에 포함됨.
+   - 3level(GTLD) ex) www.naver.com
+   - 4level(NTLD) ex) www.naver.co.kr
+b) 송수신되는 정보를 표현하는 방법 : HTML 
+	(C/S 두 peer 가 모두 이해할 수 있는 언어 형태 필요)
+c) 해당 언어로 표현된 정보를 패키징하는 방법 : Http 
+	(데이터 전송시 실제 단위는 bit 전송 -> bit packet(택배, 송장과 실제 발송 물품) : packaging 규칙성)
+
+클라이언트와 서버는 각각의 실행환경을 가지며, 이를 Front-End, Back-End 라고 표현함.
+
+경우에 따라 서버의 환경이 역할별로 분리되는 경우가 있는데, 
+물리적 분리 계층을 tier 라 하고, 이를 N-tier 아키텍처라 하며,
+한 tier 내에서 논리적으로 분화된 계층을 layer 라고 표현함.
+
+* N-Tier 아키텍처
+a) 2 tier 
+-> 정적인 요청에 대해 정적인 자원이 서비스 되는 웹 1세대 환경
+b) 3 tier 
+-> 동적인 요청에 대해 동적으로 구성된 자원을 서비스 하는 웹 2세대 이후의 환경
+c) 4 tier 
+-> 정적 요청과 동적 요청에 대한 처리 부하를 분산하기 위해 서버를 분리하기 시작함.
+--> N-Tier 아키첵처로 발전하게 됨.
+
+2) 각 티어를 구성할수 있는 어플리케이션을 개발하거나 해당 어플리케이션에 명령을 내리기 위해 사용하는 언어 쳬계에 따라 커리큘럼이 구성된 것.
+
+해당 언어의 빌드 특성에 따른 분류
+컴파일 방식 언어 : Java
+인터프리팅(스크립트) 방식 언어 : JavaScript, Python
+
+언어로 표현가능한 데이터의 타입을 확인하는 시점에 따른 분류
+정적 타입 언어 : Java 
+동적 타입 언어 : JavaScript, Python
+
+언어의 범용성에 따른 분류
+DSL(Domain Specific Language, 특정 분야에 한정적으로 적용되는 언어) : HTML, CSS, SQL 
+GPL(General Purposed Language, 범용적으로 절차적 프로세스를 구현할 수 있는 언어) : Java, Python, JavaScript
+
+해당 언어로 구현된 모듈이 동작하는 종단 위치에 따른 언어 분류
+Front-End 구성 언어 : HTML, CSS, JavaScript
+Back-End 구성 언어 : Java, Python, SQL
+
+3) Front-End | Back-End 를 동일하게 모방할 수 있는 개발환경이 필요하게 됨.
+
+3. 개발환경 구축 1 (Back-End 1)
+
+1) Front-End | Back-End  개발환경의 구조
+2) What Java, Why Java, How Java
+3) What JDK, What LTS, What Classpath

@@ -1,0 +1,55 @@
+dummyScript
+	a 태그에서 링크를 빼앗아
+	javascript : ; 형식 같은것으로 
+	만드는것
+	
+서버사이드에서 사용하는 경로는 모두
+절대경로
+tomcat은 상대경로를 받지 않는다
+상대경로 받으면 죽어버림
+
+request scope
+
+VO를 직렬화, 역직렬화 할 수 있어야한다
+
+
+document
+DOM 트리구조 DOM객체
+
+비동기 >  DOM객체 내부의 일부만 변경한다
+
+동기방식에서 주도권을 쥐고있으려면
+LOCK을 정해놓고 그LOCK을 획득하고 있어야한다
+
+비동기는 제일빠른사람이 주도권을쥔다..?
+
+ajax : Asynchronous javascript xhr
+xhr : Xml Http Request
+
+response line
+응답상태 코드
+
+원래의 데이터를 한번 감싸서
+변환해서 객체로 만든다
+->>
+wrapping
+
+adapter
+
+response body
+content body
+message body
+
+응답 상태코드
+응답 메타데이터
+응답 콘텐츠
+
+response contentType == request accept
+
+
+
+
+
+
+
+

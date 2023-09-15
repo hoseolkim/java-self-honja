@@ -1,0 +1,11 @@
+물리적 주소 == D:\apache-tomcat-8.5.90\webapps\docs
+
+인터넷에서 접속할 때는 가상의 논리주소로 접속한다.
+
+논리주소  appbase : D:\apache-tomcat-8.5.90\webapps
+1. localhost - appbase
+2. 127.0.0.1 - appbase
+localhost/docs == D:\apache-tomcat-8.5.90\webapps\docs
+localhost/docs/index.html
+
+D:\apache-tomcat-8.5.90\webapps\docs\api/index.html

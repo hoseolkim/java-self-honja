@@ -1,0 +1,2 @@
+JSP가 servlet에서 불려가기 전에 java source로 전환되면 저장되는 위치
+이클립스 workspace 위치/\.metadata\.plugins\org.eclipse.wst.server.core\tmp[번호]\\work\Catalina\localhost\[ContextRoot]\org\apache\jsp\앱베이스 안에 경로

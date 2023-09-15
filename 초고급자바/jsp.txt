@@ -1,0 +1,224 @@
+<%@page import="java.time.DayOfWeek"%>
+<%@page import="java.util.Locale"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.TimeZone"%>
+<%@page import="java.time.LocalDate"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.Set"%>
+<%@page import="java.time.ZoneId"%>
+<%@page import="java.time.MonthDay"%>
+<%@page import="java.time.Month"%>
+<%@page import="java.time.Year"%>
+<%@page import="java.util.Date"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%!
+
+
+
+%>
+
+<%
+	ZoneId zi = ZoneId.of("Asia/Seoul");
+	TimeZone time = TimeZone.getTimeZone("Asia/Seoul");
+	Year years = Year.now();
+	LocalDate lD = LocalDate.now(zi);
+	Locale locale = request.getLocale();
+	
+	Month months = lD.getMonth();
+	MonthDay md = MonthDay.now();
+	
+	
+	boolean valid = true;
+	
+	
+	
+	
+	String param1 = request.getParameter("year");
+	String param2 = request.getParameter("month");
+	String param3 = request.getParameter("pickedLocale");
+	String param4 = request.getParameter("pickedTimezone");
+	int year = years.getValue();
+	int month = months.getValue();
+	
+	
+	
+	
+	if(param1!=null&&param1.matches("[0-9]{4}")){
+		year = Integer.parseInt(param1);
+	} else if(param1 != null && !param1.matches("[0-9]{4}")){
+		// 검증 실패
+		valid = false;
+	}
+	
+	if(!valid){
+		response.sendError(HttpServletResponse.SC_BAD_REQUEST,"파라미터에 문제 있어 검증 실패");
+		return;
+	}
+	StringBuffer sb1 = new StringBuffer();
+	StringBuffer sb2 = new StringBuffer();
+	StringBuffer sb3 = new StringBuffer();
+	
+	Calendar c = Calendar.getInstance(time, locale);
+	c.set(year, month,1);
+	int[] dayArr = {31,28,31,30,31,30,31,31,30,31,30,31};
+	int lastDay = 31;
+	
+	boolean isNyear = true;
+	if(month==2&&)
+	
+	
+	
+	System.out.println(c.DAY_OF_MONTH);
+	System.out.println(lastDay);
+	
+	LocalDate date = LocalDate.of(year, month, 1);
+	
+	DayOfWeek dow = date.getDayOfWeek();
+	int dayOfWekkNumber_firstDay = dow.getValue();
+	
+	if(dayOfWekkNumber_firstDay==7) dayOfWekkNumber_firstDay = 0; 
+	
+	// 전달 빈칸 갯수 로직
+	
+
+	// 주수를 표시해줄 어쩌구
+	int cntWeek = 0;
+	// 칸을 하나씩 더해줄때마다 하나씩 늘려줄 변수(1~42)
+	int cntDay = 1;
+	
+	// 빈칸 이전달 로직
+	if(dayOfWekkNumber_firstDay!=0){
+			sb1.append("<tr>");
+		for(int i = 0 ; i < dayOfWekkNumber_firstDay; i++){
+			// 이전달 달력 여기서 추가해주기~
+			sb1.append(String.format("<td>%d</td>",i));
+			cntDay++;
+		}
+	}
+	System.out.println(lastDay);
+	// 진짜 달 로직
+	for(int i = 1 ; i <= lastDay ; i++){
+		if(i==1&&cntDay!=1){
+		}else if(i!=1&&cntDay!=1){
+			if(cntDay%7==1){
+				sb2.append("<tr>");
+			}
+		}else if(i==1&&cntDay==1){
+				sb2.append("<tr>");
+		}
+		
+		sb2.append(String.format("<td>%d</td>", i));
+		
+		if(cntDay%7==0){
+			sb2.append("</tr>");
+		}
+		cntDay++;
+	}
+	System.out.println("야이야이야~");
+	// 빈칸 다을달 로직
+// 	for(int i = 1 ; cntDay <= 42 ; i++){
+// 		if(cntDay%7==1){
+// 			sb3.append("<tr>");
+// 		}
+// 		sb3.append("<td class='nextmonth'>");
+// 		sb3.append(i);
+// 		sb3.append("</td>");
+		
+// 		if(cntDay%7==0){
+// 			sb3.append("</tr>");
+// 		}
+// 	}
+	
+
+
+
+
+%>
+
+
+
+
+<html lang="ko">
+<head>
+<style>
+	table {
+		border-collapse: collapse;
+		width : 1000px
+		
+	}
+	thead>tr {
+		height : 20px;
+	}
+	th,td {
+		border : 1px solid black;
+		text-align: center;
+	}
+	tr {
+		height : 40px;
+	}
+	th:first-child,tr>td:first-child {
+		color : red;
+	}
+	th:last-child,tr>td:last-child {
+		color : blue;
+	}
+	.prevmonth, .nextmonth {
+		color : gray;
+	}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<table>
+	<caption>
+		<a>◀◀◀</a>
+		<%=year %>. <%=months.toString() %>
+		<a>▶▶▶</a><br>
+		YEAR : <input type="number" name="year">
+		MONTH : 
+		<select name="month">
+			<option>Jan</option>
+			<option>Feb</option>
+			<option>Mar</option>
+			<option>Apr</option>
+			<option>May</option>
+			<option>Jun</option>
+			<option>Jul</option>
+			<option>Aug</option>
+			<option>Sep</option>
+			<option>Nov</option>
+			<option>Oct</option>
+			<option>Dec</option>
+		</select>
+		<select name="pickedLocale">
+			<option>ko</option>
+			<option>en</option>
+		</select>
+		<select name="pickedTimezone">
+			<option>Asia/Aden</option>
+		</select>
+	</caption>
+		<thead>
+			<tr>
+				<th id="sun">Sunday</th>
+				<th>Monday</th>
+				<th>TuesDay</th>
+				<th>Wednesday</th>
+				<th>Thursday</th>
+				<th>Friday</th>
+				<th id="sat">Saturday</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%=sb1 %>
+			<%=sb2 %>
+			<%=sb3 %>
+		</tbody>
+	</table>
+</body>
+</html>
